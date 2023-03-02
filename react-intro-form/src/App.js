@@ -3,24 +3,37 @@ import './App.css';
 import Table from './components/Table'
 import MovieForm from './components/MovieForm';
 import SearchBar from './components/SearchBar';
-import { useState, useEffect } from 'react';
+import { useEffect, useState } from 'react';
 
-const DATA_URL = "https://raw.githubusercontent.com/TreySchneider95/movie-project/main/react-intro-form/data/movies.json"
+
+const DATA_URL = "https://raw.githubusercontent.com/dd-code-immersives/movie-project/main/react-intro-form/data/movies.json"
+
 
 function App() {
 
-	
-	// runs after component has been mounted
-	const movieData = useEffect(()=>{
-		fetch(DATA_URL)
-		.then((result)=>result.json())
-		.then((result)=>{
-			setMovies(result)
-		})
-	}, [])
-	const [movies, setMovies] = useState();
-	
-	const addMovie = (movie) => {
+	//we make a hook for movies into the state
+  // because we are in a function
+  const [movies, setMovies] = useState();
+
+// use effect is equivalent to "Component did Mount" runs
+// after a  component has been rendered.
+// component first renders when it's created
+// also renders when a change happens to it 
+  useEffect(() => {
+
+	//asyncronously request data 
+	// wait for promise to resolve
+	// const moviesData = []
+	fetch(DATA_URL)
+	.then((result) => result.json())
+	.then((result) => {
+		setMovies(result);
+	});
+
+  }, [])	
+
+
+  const addMovie = (movie) => {
      setMovies([...movies, movie]);
   }
 
@@ -31,9 +44,6 @@ function App() {
     setMovies(filteredMovies)
   }
 
-//   const resetSearch = () => {
-// 	setMovies();
-//   }
 
   const filterMovies = (input, field) => {
 
@@ -56,7 +66,6 @@ function App() {
  <div className="App">
   <SearchBar	
 	filterMovies={filterMovies}
-	// resetSearch={resetSearch}
   />
   <Table 
      movies={movies || []}
