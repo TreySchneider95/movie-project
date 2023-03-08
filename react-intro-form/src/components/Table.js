@@ -13,6 +13,7 @@
  */
 
  import React from "react";
+ import { Link } from "react-router-dom";
 
  /*
  create two simple function components to make
@@ -48,7 +49,7 @@
      const rows = props.data.map((row, index) => {
        return (
          <tr key={index}>
-           <td>{row.title}</td>
+           <td><Link to={'/'+row.title }>{row.title}</Link></td>
            <td>{row.actors.join(" ")}</td>
            <td>{row.plot}</td>
            <td>{row.genre}</td>
