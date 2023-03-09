@@ -68,17 +68,6 @@ function App() {
  <div className="App">
   <NavBar />
   <Outlet context={[filterMovies, removeMovie, addMovie, movies]}/>
-  {/* <SearchBar	
-	filterMovies={filterMovies}
-  />
-  <Table 
-     movies={movies || []}
-     removeMovie={removeMovie}
-	
-  />
-  <MovieForm 
-    addMovie={addMovie}
-  /> */}
 </div>
   );
 }

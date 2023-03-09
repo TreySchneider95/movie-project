@@ -4,11 +4,12 @@ import Table from "../components/Table"
 
 
 const Movie = ()=>{
-    const [, removeMovie, , movies] = useOutletContext()
+    const [filterMovies, removeMovie, addMovie, movies] = useOutletContext()
+    console.log(movies)
     const params = useParams();
-    const [savedMovies, setSavedMovies] = useState(movies)
+    // const [savedMovies, setSavedMovies] = useState(movies)
 
-    let singleMovie = savedMovies.filter((movie)=>{
+    let singleMovie = movies.filter((movie)=>{
         return movie.title === params.filmTitle
     })
     return (
@@ -18,7 +19,7 @@ const Movie = ()=>{
                 movies={singleMovie || []}
                 removeMovie={removeMovie}
             />
-            <Outlet  context={[, removeMovie, , savedMovies]}/>
+            {/* <Outlet  context={[, removeMovie, , savedMovies]}/> */}
         </div>
     )
 }

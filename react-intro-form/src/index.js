@@ -6,6 +6,7 @@ import reportWebVitals from './reportWebVitals';
 import HomePage from './pages/HomePage';
 import MovieListPage from './pages/MovieList';
 import Movie from './pages/Movie';
+import AddMovie from './pages/AddMovie';
 import {
   createBrowserRouter,
   RouterProvider,
@@ -30,6 +31,10 @@ const router = createBrowserRouter([
         name: "movie",
         path: "/:filmTitle",
         element: <Movie/>
+      },
+      {
+        path: "/AddMovie",
+        element: <AddMovie/>
       }
     ]
 
