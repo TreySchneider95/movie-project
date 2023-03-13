@@ -55,7 +55,6 @@ function MovieForm(props) {
             year,
             newDate
         });
-        console.log(newDate);
 
         //clear inputs by setting form to inital state
         setDateAdded(newDate);

@@ -5,7 +5,6 @@ import Table from "../components/Table"
 
 const Movie = ()=>{
     const [filterMovies, removeMovie, addMovie, movies] = useOutletContext()
-    console.log(movies)
     const params = useParams();
     // const [savedMovies, setSavedMovies] = useState(movies)
 
