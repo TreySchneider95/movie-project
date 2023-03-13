@@ -1,8 +1,4 @@
-import logo from './logo.svg';
 import './App.css';
-import Table from './components/Table'
-import MovieForm from './components/MovieForm';
-import SearchBar from './components/SearchBar';
 import { useEffect, useState } from 'react';
 import NavBar from './components/NavBar';
 import { Outlet } from "react-router-dom";

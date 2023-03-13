@@ -1,5 +1,4 @@
 import { Link } from "react-router-dom";
-import AddMovie from '../pages/AddMovie';
 
 const NavBar = () => {
     return (
